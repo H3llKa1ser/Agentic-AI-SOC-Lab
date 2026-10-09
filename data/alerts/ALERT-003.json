@@ -1,0 +1,25 @@
+{
+  "id": "ALERT-003",
+  "title": "IAM user created with AdministratorAccess by CI identity",
+  "source": "aws_cloudtrail",
+  "severity": "high",
+  "created_at": "2026-09-18T19:45:00Z",
+  "description": "ci-deployer created a new IAM user, attached AdministratorAccess and created an access key.",
+  "entities": {
+    "user": [
+      "ci-deployer",
+      "svc-backup2"
+    ],
+    "ip": [
+      "203.0.113.77"
+    ],
+    "access_key": [
+      "AKIAEXAMPLECIDEPLOY1",
+      "AKIAEXAMPLEBKP00002X"
+    ]
+  },
+  "raw": {
+    "rule": "iam-admin-policy-attach-by-service-identity",
+    "region": "eu-west-1"
+  }
+}

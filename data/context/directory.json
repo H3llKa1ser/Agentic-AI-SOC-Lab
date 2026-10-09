@@ -1,0 +1,120 @@
+{
+  "users": {
+    "maria.k@luckylynx.example": {
+      "type": "employee",
+      "department": "Finance",
+      "title": "Payments Analyst",
+      "privileged": false,
+      "usual_countries": [
+        "MT",
+        "NL"
+      ],
+      "devices": [
+        "dev-mk-laptop-01"
+      ],
+      "notes": "Uses corporate VPN (Amsterdam PoP) to reach Finance ERP."
+    },
+    "j.borg@luckylynx.example": {
+      "type": "employee",
+      "department": "Security",
+      "title": "SOC Lead",
+      "privileged": true,
+      "usual_countries": [
+        "MT"
+      ],
+      "devices": [
+        "dev-jb-laptop-02"
+      ]
+    },
+    "a.papadopoulos@luckylynx.example": {
+      "type": "employee",
+      "department": "Security",
+      "title": "SOC Analyst",
+      "privileged": false,
+      "usual_countries": [
+        "MT"
+      ],
+      "devices": [
+        "dev-ap-laptop-01"
+      ]
+    },
+    "breakglass-01@luckylynx.example": {
+      "type": "emergency_access",
+      "privileged": true,
+      "break_glass": true,
+      "protected": true,
+      "usage_policy": "Only during a declared incident with a change ticket; use is alerted.",
+      "usual_countries": []
+    },
+    "it-support-temp@luckylynx.example": {
+      "type": "employee",
+      "department": null,
+      "title": null,
+      "privileged": true,
+      "created": "2026-09-22T03:13:31Z",
+      "created_by": "breakglass-01@luckylynx.example",
+      "owner": null,
+      "notes": "No HR record."
+    },
+    "ci-deployer": {
+      "type": "aws_iam_user",
+      "purpose": "CI/CD deployment",
+      "privileged": true,
+      "expected_source_ips": [
+        "192.0.2.10"
+      ],
+      "access_keys": [
+        "AKIAEXAMPLECIDEPLOY1"
+      ],
+      "owner": "platform-team",
+      "notes": "Over-permissioned: has iam:* (known finding PLAT-77)."
+    },
+    "svc-backup2": {
+      "type": "aws_iam_user",
+      "purpose": null,
+      "privileged": true,
+      "created": "2026-09-18T19:43:12Z",
+      "created_by": "ci-deployer",
+      "owner": null,
+      "access_keys": [
+        "AKIAEXAMPLEBKP00002X"
+      ],
+      "notes": "No owner or ticket on record."
+    },
+    "player-48213": {
+      "type": "customer",
+      "kyc": "verified",
+      "account_age_days": 912,
+      "usual_countries": [
+        "GB"
+      ],
+      "notes": "Payout method unchanged since 2024 before 2026-09-14."
+    }
+  },
+  "hosts": {
+    "web-edge-01": {
+      "role": "public web edge",
+      "criticality": "high",
+      "network": "dmz",
+      "protected": false
+    },
+    "ci-runner-01": {
+      "role": "CI runner",
+      "criticality": "high",
+      "ip": "192.0.2.10",
+      "protected": false
+    },
+    "dc01": {
+      "role": "domain controller",
+      "criticality": "critical",
+      "ip": "10.20.0.10",
+      "protected": true
+    },
+    "vuln-scanner-01": {
+      "role": "internal vulnerability scanner",
+      "criticality": "medium",
+      "ip": "10.20.0.5",
+      "protected": true
+    }
+  }
+}

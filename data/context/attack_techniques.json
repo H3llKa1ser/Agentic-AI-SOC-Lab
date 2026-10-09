@@ -1,0 +1,58 @@
+{
+  "T1110": {
+    "name": "Brute Force",
+    "tactic": "Credential Access"
+  },
+  "T1110.003": {
+    "name": "Password Spraying",
+    "tactic": "Credential Access"
+  },
+  "T1110.004": {
+    "name": "Credential Stuffing",
+    "tactic": "Credential Access"
+  },
+  "T1078": {
+    "name": "Valid Accounts",
+    "tactic": "Initial Access / Persistence"
+  },
+  "T1078.004": {
+    "name": "Valid Accounts: Cloud Accounts",
+    "tactic": "Initial Access / Persistence"
+  },
+  "T1098": {
+    "name": "Account Manipulation",
+    "tactic": "Persistence"
+  },
+  "T1098.001": {
+    "name": "Account Manipulation: Additional Cloud Credentials",
+    "tactic": "Persistence"
+  },
+  "T1098.003": {
+    "name": "Account Manipulation: Additional Cloud Roles",
+    "tactic": "Persistence"
+  },
+  "T1136.003": {
+    "name": "Create Account: Cloud Account",
+    "tactic": "Persistence"
+  },
+  "T1190": {
+    "name": "Exploit Public-Facing Application",
+    "tactic": "Initial Access"
+  },
+  "T1530": {
+    "name": "Data from Cloud Storage",
+    "tactic": "Collection"
+  },
+  "T1562.008": {
+    "name": "Impair Defenses: Disable or Modify Cloud Logs",
+    "tactic": "Defense Evasion"
+  },
+  "T1556.009": {
+    "name": "Modify Authentication Process: Conditional Access Policies",
+    "tactic": "Credential Access / Defense Evasion"
+  },
+  "T1657": {
+    "name": "Financial Theft",
+    "tactic": "Impact"
+  }
+}

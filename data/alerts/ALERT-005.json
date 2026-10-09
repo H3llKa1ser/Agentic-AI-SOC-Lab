@@ -1,0 +1,20 @@
+{
+  "id": "ALERT-005",
+  "title": "Break-glass account sign-in",
+  "source": "entra_id",
+  "severity": "high",
+  "created_at": "2026-09-22T03:12:30Z",
+  "description": "Emergency-access account signed in. No incident is currently declared.",
+  "entities": {
+    "user": [
+      "breakglass-01@luckylynx.example"
+    ],
+    "ip": [
+      "203.0.113.150"
+    ]
+  },
+  "raw": {
+    "rule": "break-glass-usage",
+    "app": "Azure Portal"
+  }
+}

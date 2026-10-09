@@ -1,0 +1,26 @@
+{
+  "id": "ALERT-001",
+  "title": "Login failure spike on /api/login from multiple IPs",
+  "source": "cloudflare_waf",
+  "severity": "medium",
+  "created_at": "2026-09-14T02:25:00Z",
+  "description": "More than 200 failed logins in 15 minutes across 5 source IPs with high username churn.",
+  "entities": {
+    "ip": [
+      "203.0.113.10",
+      "203.0.113.11",
+      "203.0.113.12",
+      "203.0.113.13",
+      "203.0.113.14"
+    ],
+    "url": [
+      "/api/login"
+    ]
+  },
+  "raw": {
+    "rule": "edge-login-failure-rate",
+    "window_minutes": 15,
+    "threshold": 100,
+    "observed": 240
+  }
+}

@@ -1,0 +1,44 @@
+# Response policy. This file, not the model, decides what can happen.
+# Tiers:   auto      -> executes without a human (low blast radius, reversible)
+#          approval  -> requires a named human approver
+# Anything not listed under `actions` is denied by default.
+
+actions:
+  create_ticket:       { tier: auto,     target_type: free_text,  containment: false }
+  add_to_watchlist:    { tier: auto,     target_type: indicator,  containment: false }
+  block_ip:            { tier: approval, target_type: ip,         containment: true }
+  revoke_sessions:     { tier: approval, target_type: user,       containment: true }
+  force_password_reset: { tier: approval, target_type: user,       containment: true }
+  disable_user:        { tier: approval, target_type: user,       containment: true }
+  disable_access_key:  { tier: approval, target_type: access_key, containment: true }
+  isolate_host:        { tier: approval, target_type: host,       containment: true }
+
+# Never allowed, regardless of approver. Listed explicitly so blocks are explained.
+forbidden_actions:
+  - delete_user
+  - delete_logs
+  - disable_logging
+  - modify_policy
+  - modify_detection_rule
+  - run_command
+
+protected:
+  ip_cidrs:
+    - 10.0.0.0/8
+    - 172.16.0.0/12
+    - 192.168.0.0/16
+    - 127.0.0.0/8
+    - 198.51.100.16/28   # corporate VPN egress (Amsterdam PoP)
+    - 192.0.2.10/32      # CI runner NAT
+  users: []              # identities flagged break_glass/protected in the directory are added automatically
+  hosts: []              # hosts flagged protected in the directory are added automatically
+
+limits:
+  max_actions_per_incident: 6
+  min_confidence_for_containment: 0.70
+
+triage:
+  # A suspected injection can never be auto-closed, whatever the model says.
+  injection_forces_escalation: true
+  # Below this confidence, a "do not escalate" verdict is overridden.
+  auto_close_min_confidence: 0.85

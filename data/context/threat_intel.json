@@ -1,0 +1,98 @@
+{
+  "203.0.113.10": {
+    "reputation": "malicious",
+    "categories": [
+      "credential-stuffing",
+      "residential-proxy"
+    ],
+    "asn": "AS64511",
+    "last_seen": "2026-09-14"
+  },
+  "203.0.113.11": {
+    "reputation": "malicious",
+    "categories": [
+      "credential-stuffing",
+      "residential-proxy"
+    ],
+    "asn": "AS64511",
+    "last_seen": "2026-09-14"
+  },
+  "203.0.113.12": {
+    "reputation": "malicious",
+    "categories": [
+      "credential-stuffing",
+      "residential-proxy"
+    ],
+    "asn": "AS64511",
+    "last_seen": "2026-09-14"
+  },
+  "203.0.113.13": {
+    "reputation": "malicious",
+    "categories": [
+      "credential-stuffing",
+      "residential-proxy"
+    ],
+    "asn": "AS64511",
+    "last_seen": "2026-09-14"
+  },
+  "203.0.113.14": {
+    "reputation": "malicious",
+    "categories": [
+      "credential-stuffing",
+      "residential-proxy"
+    ],
+    "asn": "AS64511",
+    "last_seen": "2026-09-14"
+  },
+  "203.0.113.77": {
+    "reputation": "suspicious",
+    "categories": [
+      "hosting/VPS"
+    ],
+    "asn": "AS64500 ExampleHost",
+    "note": "Not associated with Lucky Lynx infrastructure."
+  },
+  "203.0.113.99": {
+    "reputation": "malicious",
+    "categories": [
+      "web-scanner",
+      "sqli"
+    ],
+    "asn": "AS64500"
+  },
+  "203.0.113.150": {
+    "reputation": "suspicious",
+    "categories": [
+      "anonymizing-vpn"
+    ],
+    "asn": "AS64502"
+  },
+  "198.51.100.16/28": {
+    "reputation": "trusted",
+    "categories": [
+      "corporate-vpn-egress"
+    ],
+    "owner": "Lucky Lynx IT (Amsterdam PoP)"
+  },
+  "192.0.2.10": {
+    "reputation": "trusted",
+    "categories": [
+      "ci-runner-nat"
+    ],
+    "owner": "Lucky Lynx platform team"
+  },
+  "192.0.2.44": {
+    "reputation": "neutral",
+    "categories": [
+      "residential-isp"
+    ],
+    "country": "MT"
+  },
+  "10.20.0.5": {
+    "reputation": "trusted",
+    "categories": [
+      "internal"
+    ],
+    "owner": "vuln-scanner-01 (Security)"
+  }
+}
